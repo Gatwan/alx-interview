@@ -30,6 +30,7 @@ def safe(board, col, row, n):
 
     return True
 
+
 def main():
     """ N queens """
     if len(argv) == 1:
@@ -44,7 +45,7 @@ def main():
         exit(1)
 
     if n < 4:
-        print ("N must be at least 4")
+        print("N must be at least 4")
         exit(1)
 
     board = [[0 for _ in range(n)] for _ in range(n)]
@@ -52,7 +53,8 @@ def main():
     def backtrack(row):
         """ Checks n in rows """
         if row == n:
-            output = [] #prints the queen positions
+            """ prints the queen's position """
+            output = []
             for i in range(n):
                 for j in range(n):
                     if board[i][j] == 1:
