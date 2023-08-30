@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Get minimum number of coins """
 
+
 def makeChange(coins, total):
     """ Returns fewest numbers of coins """
     if total <= 0:
