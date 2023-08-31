@@ -5,56 +5,21 @@
 def island_perimeter(grid):
     """ Checks perimeter """
     perimeter = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            if grid[i][j] == 1:
-                perimeter += front_per(grid, i, j)
-                perimeter += back_per(grid, i, j)
-                perimeter += right_per(grid, i, j)
-                perimeter += left_per(grid, i, j)
+
+    for row in range(len(grid)):
+        for col in range(len(grid[0])):
+            if grid[row][col] == 1:
+                # Check left
+                if col == 0 or grid[row][col - 1] == 0:
+                    perimeter += 1
+                # Check right
+                if col == len(grid[0]) - 1 or grid[row][col + 1] == 0:
+                    perimeter += 1
+                # Check up
+                if row == 0 or grid[row - 1][col] == 0:
+                    perimeter += 1
+                # Check down
+                if row == len(grid) - 1 or grid[row + 1][col] == 0:
+                    perimeter += 1
 
     return perimeter
-
-
-def front_per(grid, i, j):
-    """ Checks front perimeter """
-    if i == 0:
-        return 0
-
-    if grid[i - 1][j] == 0:
-        return 1
-
-    return 0
-
-
-def right_per(grid, i, j):
-    """ Checks right perimeter """
-    if j == len(grid[i]) - 1:
-        return 0
-
-    if grid[i][j + 1] == 0:
-        return 1
-
-    return 0
-
-
-def back_per(grid, i, j):
-    """ Checks back perimeter """
-    if i == len(grid) - 1:
-        return 0
-
-    if grid[i + 1][j] == 0:
-        return 1
-
-    return 0
-
-
-def left_per(grid, i, j):
-    """ Checks left perimeter """
-    if j == 0:
-        return 0
-
-    if grid[i][j - 1] == 0:
-        return 1
-
-    return 0
