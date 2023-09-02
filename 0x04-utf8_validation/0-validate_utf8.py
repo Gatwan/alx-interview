@@ -13,7 +13,7 @@ def validUTF8(data):
 
             if 192 <= byte < 224:
                 num_bytes = 1
-            elif 224 <= byte <240:
+            elif 224 <= byte < 240:
                 num_bytes = 2
             elif 240 <= byte < 248:
                 num_byes = 3
