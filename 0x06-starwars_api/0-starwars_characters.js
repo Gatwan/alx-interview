@@ -23,15 +23,16 @@ async function main () {
     return;
   }
 
-  const movieUrl = 'https://swapi-api.alx-tools.com/api/films/${args[2]}';
+  const movieUrl = `https://swapi-api.alx-tools.com/films/${args[2]}`;
   request.get(movieUrl, async (error, response, body) => {
     if (error) {
       console.error(error);
+      return;
     }
 
     const movieData = JSON.parse(body);
     if (!movieData.characters || movieData.characters.length === 0) {
-      console.log('Character data not available for this movie.');
+      console.log('No character data available for this movie.');
       return;
     }
 
