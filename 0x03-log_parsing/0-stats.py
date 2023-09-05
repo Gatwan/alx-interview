@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    """ """
+    """ Checks the metrics"""
     file_size = 0
     counter = 0
 
