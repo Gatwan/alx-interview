@@ -23,7 +23,7 @@ async function main () {
     return;
   }
 
-  const movieUrl = `https://swapi-api.alx-tools.com/films/${args[2]}`;
+  const movieUrl = `https://swapi-api.alx-tools.com/api/films/${args[2]}`;
   request.get(movieUrl, async (error, response, body) => {
     if (error) {
       console.error(error);
